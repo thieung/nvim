@@ -42,6 +42,14 @@ function M.config()
         },
         view = "mini",
       },
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+          find = "written",
+        },
+        opts = { skip = true },
+      },
     },
     presets = {
       bottom_search = true,
