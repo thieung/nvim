@@ -21,6 +21,8 @@ return {
           hl.LineNr = { fg = c.orange, bold = true }
           hl.LineNrAbove = { fg = c.fg_gutter }
           hl.LineNrBelow = { fg = c.fg_gutter }
+
+          -- custom telescope ui
           local prompt = "#2d3149"
           hl.TelescopeNormal = { bg = c.bg_dark, fg = c.fg_dark }
           hl.TelescopeBorder = { bg = c.bg_dark, fg = c.bg_dark }
@@ -29,6 +31,11 @@ return {
           hl.TelescopePromptTitle = { bg = c.fg_gutter, fg = c.orange }
           hl.TelescopePreviewTitle = { bg = c.bg_dark, fg = c.bg_dark }
           hl.TelescopeResultsTitle = { bg = c.bg_dark, fg = c.bg_dark }
+
+          -- change cmp window highlights
+          hl.Pmenu = { bg = "NONE" }
+          hl.CmpBorder = { fg = "#2d2e43", bg = "NONE" }
+          hl.CmpDocBorder = { fg = "#2d2e43", bg = "NONE" }
         end,
       }
     end,
