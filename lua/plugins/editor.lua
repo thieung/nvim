@@ -33,7 +33,7 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
-      enable_git_status = false,
+      enable_git_status = true,
       enable_diagnostics = false,
       close_if_last_window = true, -- close Neo-tree if it is the last window left in the tab
       filesystem = {
@@ -105,6 +105,11 @@ return {
         "<leader>fp",
         "<cmd>Telescope project display_type=full<CR>",
         desc = "Find project",
+      },
+      {
+        "<leader>sx",
+        "<CMD>Telescope resume<CR>",
+        desc = "Resume last search",
       },
     },
     config = function(_, opts)

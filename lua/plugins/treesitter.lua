@@ -9,6 +9,10 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "windwp/nvim-ts-autotag", -- Autoclose and autorename HTML and Vue tags
+      "RRethy/nvim-treesitter-endwise", -- Automatically add end keywords for Ruby, Lua, Python, and more
+    },
     opts = {
       ensure_installed = {
         "bash",
@@ -34,6 +38,9 @@ return {
         "yaml",
       },
       indent = { enable = false },
+      endwise = { enable = true }, -- nvim-treesitter-endwise plugin
+      autotag = { enable = true }, -- nvim-ts-autotag plugin
+      context_commentstring = { enable = true }, -- nvim-ts-context-commentstring plugin
       query_linter = {
         enable = true,
         use_virtual_text = true,

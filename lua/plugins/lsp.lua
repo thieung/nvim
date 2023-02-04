@@ -95,6 +95,7 @@ return {
           formatting.prettierd.with({
             filetypes = {
               "markdown",
+              "liquid",
             },
           }),
 
@@ -118,4 +119,5 @@ return {
 
   -- language specific extension modules
   { import = "plugins.extras.lang.ruby" },
+  { import = "plugins.extras.lang.liquid" },
 }
