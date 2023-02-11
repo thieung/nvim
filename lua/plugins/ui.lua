@@ -92,6 +92,7 @@ return {
       -- https://github.com/yamatsum/nvim-nonicons/blob/main/lua/nvim-nonicons/mapping.lua
       local mapping = {
         ["ruby"] = "61880",
+        ["go"] = "61789",
       }
       local function get(name)
         return vim.fn.nr2char(mapping[name])
@@ -113,6 +114,11 @@ return {
             icon = get("ruby"),
             color = palette.bright_red,
             name = "Rb",
+          },
+          ["go"] = {
+            icon = get("go"),
+            color = palette.bright_blue,
+            name = "Go",
           },
         },
       }
