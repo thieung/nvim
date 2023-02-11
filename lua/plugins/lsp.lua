@@ -4,49 +4,51 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       format = { timeout_ms = 3000 },
-      sumneko_lua = {
-        single_file_support = true,
-        settings = {
-          Lua = {
-            workspace = {
-              checkThirdParty = false,
-            },
-            completion = {
-              workspaceWord = true,
-              callSnippet = "Both",
-            },
-            misc = {
-              parameters = {
-                "--log-level=trace",
+      servers = {
+        sumneko_lua = {
+          single_file_support = true,
+          settings = {
+            Lua = {
+              workspace = {
+                checkThirdParty = false,
               },
-            },
-            diagnostics = {
-              groupSeverity = {
-                strong = "Warning",
-                strict = "Warning",
+              completion = {
+                workspaceWord = true,
+                callSnippet = "Both",
               },
-              groupFileStatus = {
-                ["ambiguity"] = "Opened",
-                ["await"] = "Opened",
-                ["codestyle"] = "None",
-                ["duplicate"] = "Opened",
-                ["global"] = "Opened",
-                ["luadoc"] = "Opened",
-                ["redefined"] = "Opened",
-                ["strict"] = "Opened",
-                ["strong"] = "Opened",
-                ["type-check"] = "Opened",
-                ["unbalanced"] = "Opened",
-                ["unused"] = "Opened",
+              misc = {
+                parameters = {
+                  "--log-level=trace",
+                },
               },
-              unusedLocalExclude = { "_*" },
-            },
-            format = {
-              enable = false,
-              defaultConfig = {
-                indent_style = "space",
-                indent_size = "2",
-                continuation_indent_size = "2",
+              diagnostics = {
+                groupSeverity = {
+                  strong = "Warning",
+                  strict = "Warning",
+                },
+                groupFileStatus = {
+                  ["ambiguity"] = "Opened",
+                  ["await"] = "Opened",
+                  ["codestyle"] = "None",
+                  ["duplicate"] = "Opened",
+                  ["global"] = "Opened",
+                  ["luadoc"] = "Opened",
+                  ["redefined"] = "Opened",
+                  ["strict"] = "Opened",
+                  ["strong"] = "Opened",
+                  ["type-check"] = "Opened",
+                  ["unbalanced"] = "Opened",
+                  ["unused"] = "Opened",
+                },
+                unusedLocalExclude = { "_*" },
+              },
+              format = {
+                enable = false,
+                defaultConfig = {
+                  indent_style = "space",
+                  indent_size = "2",
+                  continuation_indent_size = "2",
+                },
               },
             },
           },
@@ -98,12 +100,17 @@ return {
               "liquid",
             },
           }),
+          formatting.pg_format,
+          formatting.gofumpt,
+          formatting.goimports,
+          formatting.golines,
 
           -- Diagnostic
           diagnostics.markdownlint,
           diagnostics.rubocop.with({
             command = "rubocop-daemon-wrapper",
           }),
+          diagnostics.golangci_lint,
         },
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", ".git"),
       })
@@ -119,5 +126,6 @@ return {
 
   -- language specific extension modules
   { import = "plugins.extras.lang.ruby" },
+  { import = "plugins.extras.lang.go" },
   { import = "plugins.extras.lang.liquid" },
 }

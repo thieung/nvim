@@ -1,4 +1,10 @@
 return {
+  -- disable noice.nvim
+  {
+    "folke/noice.nvim",
+    enabled = false,
+  },
+
   -- floating winbar
   {
     "b0o/incline.nvim",
