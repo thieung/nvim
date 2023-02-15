@@ -22,16 +22,6 @@ return {
   -- null-ls
   {
     "jose-elias-alvarez/null-ls.nvim",
-    dependencies = {
-      {
-        "jayp0521/mason-null-ls.nvim",
-        opts = {
-          ensure_installed = nil,
-          automatic_installation = true,
-          automatic_setup = false,
-        },
-      },
-    },
     config = function()
       local nls = require("null-ls")
       local formatting = nls.builtins.formatting
