@@ -7,4 +7,8 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 
+-- set leader keys
+vim.g.mapleader = " " -- Space is leader key
+vim.g.maplocalleader = ";" -- ; is localleader key
+
 vim.opt.pumblend = 0 -- disable popup menu transparency
